@@ -1,0 +1,13 @@
+class Solution {
+    public int climbStairs(int n) {
+        int previous2 = 1, previous1 = 2, total=0;
+        if(n==1) return previous2;
+        if(n==2) return previous1;
+        for (int i = 3; i<=n ; i++) {
+            total = previous1 + previous2;
+            previous2 = previous1;
+            previous1 = total; 
+        }
+        return total;
+    }
+}
