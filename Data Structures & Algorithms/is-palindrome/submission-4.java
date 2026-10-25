@@ -2,11 +2,11 @@ class Solution{
     public boolean isPalindrome(String s) {
         char[] characters = s.toLowerCase().toCharArray();
 
-        for(int i = 0, j = characters.length-1; i < characters.length; i++, j--){
+        for(int i = 0, j = characters.length-1; i < characters.length-1; i++, j--){
             if (!alphaNum(characters[i])) i++;
             if (!alphaNum(characters[j])) j--;
 
-            if (characters[i] != characters[j]) return false;
+            if (i <= characters.length-1 && j >=0 && characters[i] != characters[j]) return false;
         }
 
         return true;
